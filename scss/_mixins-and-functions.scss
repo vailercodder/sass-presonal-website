@@ -1,0 +1,20 @@
+// mixins and functions
+@mixin lighten-text($color, $amount) {
+  color: lighten($color, $amount);
+}
+
+@mixin keyframe-typing {
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+}
+
+@mixin keyframe-blink {
+  @keyframes blink {
+    60% {
+      border-color: transparent;
+    }
+  }
+}

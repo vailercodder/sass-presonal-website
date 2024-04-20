@@ -1,0 +1,271 @@
+@import "variables";
+@import "mixins-and-functions";
+
+.navbar-custom {
+  background-color: $primary-color;
+
+  .navbar-collapse {
+    justify-content: space-between;
+  }
+  .navbar-brand {
+    background-image: linear-gradient(to right, rgb(204, 11, 43), orange);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  .nav-link {
+    color: white;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .btn-warning {
+    background-color: $secondary-color;
+    border-color: darken($secondary-color, 10%);
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
+  }
+}
+// hero section
+.hero-custom {
+  background-color: $hero-bg-color;
+  color: $hero-text-color;
+  padding: 1rem 0;
+
+  .lead.text-start.a {
+    color: #585757;
+    @include lighten-text($hero-bg-color, 50%);
+  }
+
+  h1 {
+    font-weight: bold;
+    color: $primary-color;
+    color: darken($primary-color, 20%);
+  }
+
+  .btn-primary {
+    background-color: $primary-cta-color;
+    border-color: darken($primary-cta-color, 15%);
+    &:hover {
+      background-color: darken($primary-cta-color, 50%);
+    }
+  }
+
+  .btn-secondary {
+    background-color: $secondary-cta-color;
+    border-color: darken($secondary-cta-color, 15%);
+    &:hover {
+      background-color: darken($primary-cta-color, 50%);
+    }
+  }
+  .container-hero {
+    margin: 0;
+  }
+
+  .card-group {
+    background-color: #000;
+
+    .card {
+      border-right: 1px solid transparent;
+
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+      &:first-child {
+        border-right: none;
+      }
+
+      &:nth-child(2) {
+        border-right: none;
+      }
+
+      .card-img-top {
+      }
+
+      &:hover {
+        transform: rotateX(5deg) translateY(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+      .card-body {
+        background-color: #333;
+        color: #fff;
+
+        .card-title {
+          color: palegoldenrod;
+        }
+        .card-text {
+          color: red;
+        }
+        .text-white {
+        }
+      }
+    }
+  }
+}
+
+// animation for the header-hero
+h1.display-3.text-start {
+  width: $total-characters + ch;
+  animation: typing $typing-speed steps($total-characters),
+    blink $blink-speed step-end infinite alternate;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: $cursor-width solid $cursor-color;
+  color: $text-color;
+  font-family: $font-family;
+  font-size: 2em;
+  width: 15rem;
+  @include keyframe-typing;
+  @include keyframe-blink;
+}
+
+// social stuff row,(later if i have time)
+
+// about me section
+
+.about-me {
+  background: url("/dist//resources/img/background.jpg") no-repeat center center;
+  background-size: cover;
+  padding: 50px 0;
+
+  .img-fluid {
+    opacity: 0;
+    animation: slideIn 4.5s forwards;
+    animation-delay: 0.1s;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    color: #fff;
+  }
+
+  p,
+  li {
+    color: #eee;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding-left: 1.5em;
+      position: relative;
+      margin-bottom: 0.5em;
+
+      &:before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #ccc;
+      }
+    }
+  }
+
+  .btn-primary {
+    background-color: $primary-color;
+    border: none;
+    margin-top: 20px;
+  }
+}
+
+// portfolio
+.portfolio {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    &.portfolio-card-a {
+      background: url("/dist/resources/img/amaozon-project.png") no-repeat
+        center;
+      background-size: contain;
+    }
+
+    &.portfolio-card-b {
+      background: url("/dist/resources/img/tesla.png") no-repeat center;
+      background-size: contain;
+    }
+
+    &.portfolio-card-c {
+      background: url("/dist/resources/img/new\ york\ times.png") no-repeat
+        center;
+      background-size: contain;
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+
+      .card-title {
+        color: #333;
+      }
+
+      .card-text {
+        color: #555;
+        font-weight: 700;
+      }
+
+      .btn-primary {
+        background-color: #0056b3;
+      }
+    }
+  }
+}
+
+.portfolio-title {
+  width: $total-characters + ch;
+  animation: typing $typing-speed steps($total-characters),
+    blink $blink-speed step-end infinite alternate;
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: $cursor-width solid $cursor-color;
+  color: $text-color;
+  font-family: $font-family;
+  font-size: 1.3em;
+  width: 25rem;
+  font-weight: bold;
+  @include keyframe-typing;
+  @include keyframe-blink;
+}
