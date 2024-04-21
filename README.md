@@ -1,5 +1,5 @@
 # sass-presonal-website
-Introduction
+Introductions
 This document provides an overview of my personal website, designed to showcase my skills and projects as a web developer. The website is built using a combination of Bootstrap for responsive design and SASS for advanced styling capabilities.
 
 Key Features
